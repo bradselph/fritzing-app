@@ -5,7 +5,8 @@ matrix:
     services:
       - docker
     before_install:
-      - docker pull fritzing/build:xenial
+      - docker build . -t fritzing/build:xenial -f docker/Dockerfile
+      # - docker pull fritzing/build:xenial
     script:
       - docker/release-linux.sh 0.9.4debug-continuous
 
